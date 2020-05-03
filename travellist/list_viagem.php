@@ -30,15 +30,19 @@ try {
             $intviaft1="img/".$intcodvia."/".$row['int_tb_via_foto_1'];
            
             $strrotdtavia=$row['str_tb_rot_data_viagem'];
-            $strrotdtaret=date('d/m/y',strrotime($row['str_tb_rot_datahora_desembarque']));
+            $strrotdtademb=$row['str_tb_rot_datahora_desembarque'];
 ?>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 desc">
                 <div class="thumbnail">
                     <img class="img-responsive" src="<?php echo $strviaft1 ?>" style="width:100%;height:225px;" alt="">
                     <div class="caption">
                       <a href="travellist/modal.php?via=<?php echo $intcodvia ?>&rot=<?php echo $intcodrot ?>" data-fancybox data-small-btn="true" data-options='{"type" : "iframe", "iframe" : {"preload" : false, "css" : {"width" : "600px"}}}'>
-                          <h3><?php echo $strnmevia." - ".date('d/m/Y',strtotime($strrotdtavia)) ?></h3>
-                      </a>
+                          <h3><?php
+                                if (date('d/m/Y',strtotime($strrotdtavia)) == date('d/m/Y',strtotime($strrotdtademb))){
+                                    echo $strnmevia." - ".date('d/m/Y',strtotime($strrotdtavia));
+                                } else {
+                                    echo $strnmevia." - ".date('d/m/Y',strtotime($strrotdtavia))." a ".date('d/m/Y',strtotime($strrotdtademb));
+                                }?>
                     </div>
                 </div>
         </div> <!--col-lg-4 -->
