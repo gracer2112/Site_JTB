@@ -36,13 +36,13 @@ try {
                 <div class="thumbnail">
                     <img class="img-responsive" src="<?php echo $strviaft1 ?>" style="width:100%;height:225px;" alt="">
                     <div class="caption">
-                      <a href="travellist/modal.php?via=<?php echo $intcodvia ?>&rot=<?php echo $intcodrot ?>" data-fancybox data-small-btn="true" data-options='{"type" : "iframe", "iframe" : {"preload" : false, "css" : {"width" : "600px"}}}'>
+                        <a href="travellist/modal.php?via=<?php echo $intcodvia ?>&rot=<?php echo $intcodrot ?>" data-fancybox data-small-btn="true" data-options='{"type" : "iframe", "iframe" : {"preload" : false, "css" : {"width" : "700px"}}}'>
                           <h3><?php
                                 if (date('d/m/Y',strtotime($strrotdtavia)) == date('d/m/Y',strtotime($strrotdtademb))){
                                     echo $strnmevia." - ".date('d/m/Y',strtotime($strrotdtavia));
                                 } else {
                                     echo $strnmevia." - ".date('d/m/Y',strtotime($strrotdtavia))." a ".date('d/m/Y',strtotime($strrotdtademb));
-                                }?>
+                                    }?></h3></a>
                     </div>
                 </div>
         </div> <!--col-lg-4 -->
